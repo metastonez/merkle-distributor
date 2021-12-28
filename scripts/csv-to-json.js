@@ -5,7 +5,6 @@ const whitelist = {}
 fs.createReadStream('genesis.csv')
   .pipe(csv())
   .on('data', (row) => {
-    console.log(row)
     whitelist[row['Address']] = row['Number']
   })
   .on('end', () => {
